@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>CMS</title>
+</head>
+<body style="margin-top:80px; ">
+  <% include ../parts/_navigation.html %>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+        <div class="list-group">
+          <a href="/product/list" class="list-group-item">产品管理</a>
+          <a href="/product/type" class="list-group-item active">产品分类管理</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <label>产品名称</label>
+            <input type="text" class="form-control" placeholder="Search"></div>
+          <button type="button" class="btn btn-default">查找</button>
+        </form>
+        <span class="btn btn-info" style="float:right;">添加</span>
+        <table class="table table-hover" style="margin-top:60px; ">
+          <thead>
+            <tr>
+              <th>类型编号</th>
+              <th>类型名称</th>
+              <th>创建时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+  <% include ../parts/_foot.html %>
+  <% include ../_script.html %></body>
+</html>
