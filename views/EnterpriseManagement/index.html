@@ -40,18 +40,29 @@
     <div class="panel panel-default">
       <!-- Default panel contents -->
       <div class="panel-heading">公司资质</div>
-      <div class="panel-body"></div>
+      <div class="panel-body">
+        <form class="form-horizontal" id="baseInfo">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">企业资质</label>
+            <div class="col-sm-6">
+              <span style=" float:left;" class="btn btn-success fileinput-button">
+                <span>添加</span>
+                <input id="fileupload_input" type="file" name="files[]" multiple></span>
+              <div class="col-sm-4"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">公司简介</div>
+      </div>
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">联系方式</div>
+      </div>
     </div>
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">公司简介</div>
-    </div>
-    <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading">联系方式</div>
-    </div>
-  </div>
-  <% include ../parts/_foot.html %>
-  <% include ../_script.html %></body>
-  <script type="text/javascript" src="javascripts/EnterpriseManagement/index.js"></script>
-</html>
+    <% include ../parts/_foot.html %>
+    <% include ../_script.html %></body>
+    <script type="text/javascript" src="javascripts/EnterpriseManagement/index.js"></script>
+  </html>

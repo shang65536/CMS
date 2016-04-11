@@ -1,6 +1,5 @@
 var config = require('../config');
 var mysql = require('mysql');
-console.log(config.mysql);
 
 // 获取数据库链接
 var pool = mysql.createPool({
