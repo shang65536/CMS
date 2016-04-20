@@ -1,9 +1,14 @@
+var express = require('express'),
+	http = require('http');
+var upload = require('jquery-file-upload-middleware');
+
 var _ = require("underscore");
 var apiConfig = require('../Api/apiConfig');
 var db = require('../DB/index');
+
 module.exports = function(app) {
-	app.post('/api/*', function(req, res) {
-		try {			
+	app.all('/api/*', function(req, res, callback) {
+		try {
 			var api = _.findWhere(apiConfig.api, {
 				path: req.url
 			});
@@ -18,8 +23,7 @@ module.exports = function(app) {
 			}
 			//动态请求方法的类。
 		} catch (e) {
-			console.log(e.message);
+			console.log('eror:' + e.message);
 		}
-
 	});
 };

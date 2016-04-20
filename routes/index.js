@@ -17,4 +17,7 @@ module.exports = function(app) {
 	app.get('/product/list', function(req, res) {
 		res.render('product/productList');
 	});
+	app.get('/echart', function(req, res) {
+		res.render('echart/echartIndex');
+	});
 };
