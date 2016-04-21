@@ -7,8 +7,7 @@ module.exports = function(app) {
 	app.get('/enterpris', function(req, res) {
 		res.render('EnterpriseManagement/index');
 	});
-	app.get('/product', function(req, res) {
-		//res.render('product/index');
+	app.get('/product', function(req, res) {	
 		res.render('product/typeList');
 	});
 	app.get('/product/type', function(req, res) {

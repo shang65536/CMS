@@ -10,7 +10,7 @@
   <title>CMS</title>
 </head>
 <body style="margin-top:80px; ">
-  <% include ../parts/_navigation.html %>
+  <% include ../parts/_navigation.html %>  
   <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
@@ -75,13 +75,11 @@
             <div class="form-group">
               <label for="parent" class="col-sm-2 control-label">父级节点</label>
               <div class="col-sm-6">
-                <select class="form-control">
-                  <option>0</option>
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                  <option>5</option>
+                <select id="selectTypeParent" class="form-control"> 
+                  <option>顶级</option>
+                  <!-- ko foreach:$root.tableList -->
+                  <option data-bind='text:name,attr:{"value":id}'></option>               
+                  <!-- /ko -->
                 </select>
               </div>
             </form>
@@ -96,6 +94,6 @@
   </div>
   <% include ../parts/_foot.html %>
   <% include ../_script.html %>
-  <script type="text/javascript" src="javascripts/product/typeList.js"></script>
+  <script type="text/javascript" src="../javascripts/product/typeList.js"></script>
 </body>
 </html>

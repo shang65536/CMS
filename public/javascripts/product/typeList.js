@@ -8,7 +8,7 @@ var pageViewModel = function(data) {
 				type: 'GET'
 			})
 			.done(function(msg) {
-				ko.mapping.fromJS(msg,self.tableList);				
+				ko.mapping.fromJS(msg, self.tableList);
 			})
 			.fail(function() {
 				console.log("error");
@@ -30,6 +30,8 @@ var pageViewModel = function(data) {
 	self.seaveTypeInfo = function(event, data) {
 		//调用后台存放数据			
 		var request = ko.mapping.toJS(self.TypeInfo);
+		request.parent = $('#selectTypeParent').find('option:selected').attr('value');
+		alert(request.parent);
 		$.ajax({
 				url: '/api/product/addType',
 				type: 'post',
