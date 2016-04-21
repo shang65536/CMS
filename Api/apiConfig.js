@@ -27,6 +27,21 @@ module.exports = {
 			class: "product",
 			function: "getTypeList",
 			describe: "获取全部产品类别"
+		}, {
+			id: "",
+			name: "",
+			path: "/api/product/addParent",
+			class: "product",
+			function: "addParent",
+			describe: "添加成品"
+		}, {
+			id: "",
+			name: "",
+			path: "/api/product/ProductList",
+			class: "product",
+			function: "ProductList",
+			describe: "获取产品列表"
 		}
+
 	]
 }
