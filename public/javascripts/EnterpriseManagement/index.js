@@ -1,5 +1,9 @@
 var pageViewModel = function(data) {
 	var self = this;
+
+	//初始化富文本编辑器
+	var ue = UE.getEditor('editor');
+
 	//基本信息
 	self.database = ko.mapping.fromJS({
 			name: "张三",
