@@ -6,43 +6,34 @@ var pageViewModel = function(data) {
 
 	//基本信息
 	self.database = ko.mapping.fromJS({
-			name: "张三",
-			createTime: "2013-01-12"
-		})
-		//保存基本信息
+		name: "张三",
+		createTime: "2013-01-12"
+	})
+
+	//保存页面的全部信息	
 	self.seaveBaseInfo = function(event, data) {
-			//调用后台存放数据
-			var request = ko.mapping.toJS(self.database);
-			$.ajax({
-					url: '/api/enterprise/add',
-					type: 'post',
-					data: request
-				})
-				.success(function(msg) {
-					alert(JSON.stringify(msg));
-				})
-				.done(function() {
-					console.log("success");
-				})
-				.fail(function() {
-					console.log("error");
-				})
-				.always(function() {
-					console.log("complete");
-				});
-		}
-		//资质信息
-	self.qualifications = ko.mapping.fromJS({
-		qName: "",
-		qPaht: []
-	});
-	//保存资质信息
-	self.seaveQualifications = function(event, data) {
+		//调用后台存放数据
+		var request = ko.mapping.toJS(self.database);
+		$.ajax({
+				url: '/api/enterprise/add',
+				type: 'post',
+				data: request
+			})
+			.success(function(msg) {
+				alert(JSON.stringify(msg));
+			})
+			.done(function() {
+				console.log("success");
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
+	}
 
-		}
-		//保存资质信息
-
-
+	//图片上传的方法
 	$("#fileupload_input").fileupload({
 		dataType: 'json',
 		url: "/api/imageUpload/upload", //文件上传地址，当然也可以直接写在input的data-url属性内

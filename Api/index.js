@@ -8,6 +8,7 @@ var apiConfig = require('../Api/apiConfig');
 var db = require('../DB/index');
 
 module.exports = function(app) {
+	//分析api.并按照配置调用方法
 	app.all('/api/*', function(req, res, callback) {
 		try {
 			var api = _.findWhere(apiConfig.api, {
