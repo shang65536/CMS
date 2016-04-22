@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>CMS</title>
+</head>
+<body style="margin-top:80px; ">
+  <% include ../parts/_navigation.html %>
+  <div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+        <div class="list-group">
+          <a href="/NewsManagement/type" class="list-group-item">新闻分类管理</a>
+          <a href="/NewsManagement/list" class="list-group-item active">新闻管理</a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-9">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <label>关键字</label>
+            <input type="text" class="form-control" placeholder="Search"></div>
+          <button type="button" class="btn btn-default">查找</button>
+        </form>
+        <span class="btn btn-info" style="float:right;" data-toggle="modal" data-target="#myModal">添加</span>
+        <table class="table table-hover" style="margin-top:60px; ">
+          <thead>
+            <tr>
+              <th>类型名称</th>
+              <th>描述</th>
+              <th>创建时间</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody data-bind='foreach:$root.tableList'>
+            <tr>
+              <td data-bind='text:name'></td>
+              <td data-bind='text:describe'></td>
+              <td data-bind='text:createTime'></td>
+              <td>
+                <span class="btn btn-link">编辑</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">添加产品分类</h4>
+        </div>
+        <div class="modal-body" data-bind='with:$root.TypeInfo'>
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
+              <div class="col-sm-6">
+                <input type="text" data-bind="value:name" class="form-control" id="name" placeholder="名称"></div>
+            </div>
+            <div class="form-group">
+              <label for="describe"  class="col-sm-2 control-label">描述</label>
+              <div class="col-sm-6">
+                <input type="text" data-bind="value:describe" class="form-control" id="describe" placeholder="描述"></div>
+            </div>
+            <div class="form-group">
+              <label for="parent" class="col-sm-2 control-label">父级节点</label>
+              <div class="col-sm-6">
+                <select id="selectTypeParent" class="form-control">
+                  <option>顶级</option>
+                  <!-- ko foreach:$root.tableList -->
+                  <option data-bind='text:name,attr:{"value":id}'></option>
+                  <!-- /ko --> </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-primary" data-bind="click:$root.seaveTypeInfo">保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../parts/_foot.html %>
+  <% include ../_script.html %>
+  <script type="text/javascript" src="../javascripts/product/typeList.js"></script>
+</body>
+</html>
