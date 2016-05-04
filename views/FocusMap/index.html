@@ -12,8 +12,65 @@
 <body style="margin-top:80px; ">
   <% include ../parts/_navigation.html %>
   <div class="container">
-    <div class="row row-offcanvas row-offcanvas-right">
-      FocusMap
+    <div class="text-right" style="margin-bottom: 30px;">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">添加一组焦点图</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id编号</th>
+          <th>名称</th>
+          <th>描述</th>
+          <th style="width: 200px;text-align:center;">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>00123</td>
+          <td>哈哈哈</td>
+          <td>首页测试</td>
+          <td style="width: 200px;text-align:center;">
+            <span class="btn btn-link">管理轮播图片</span>
+            <span class="btn btn-link">删除</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">添加焦点图</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email"></div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password"></div>
+            </div>           
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
     </div>
   </div>
   <% include ../parts/_foot.html %>

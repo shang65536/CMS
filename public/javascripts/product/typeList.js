@@ -30,14 +30,13 @@ var pageViewModel = function(data) {
 	self.seaveTypeInfo = function(event, data) {
 		//调用后台存放数据			
 		var request = ko.mapping.toJS(self.TypeInfo);
-		request.parent = $('#selectTypeParent').find('option:selected').attr('value');
-		alert(request.parent);
+		request.parent = $('#selectTypeParent').find('option:selected').attr('value');		
 		$.ajax({
 				url: '/api/product/addType',
 				type: 'post',
 				data: request
 			})
-			.success(function(msg) {
+			.success(function(msg) {				
 				$('#myModal').modal('hide');
 				getAll();
 			})

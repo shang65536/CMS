@@ -2,18 +2,21 @@ var pageViewModel = function(data) {
 	var self = this;
 
 	//初始化富文本编辑器
-	var ue = UE.getEditor('editor');
+	var um = UE.getEditor('editor');
 
 	//基本信息
 	self.database = ko.mapping.fromJS({
-		name: "张三",
-		createTime: "2013-01-12"
+		name: "ss",
+		createTime: "",
+		introduce: ""
 	})
 
 	//保存页面的全部信息	
 	self.seaveBaseInfo = function(event, data) {
 		//调用后台存放数据
 		var request = ko.mapping.toJS(self.database);
+		var content = um.getContent();
+		request.introduce = content;
 		$.ajax({
 				url: '/api/enterprise/add',
 				type: 'post',

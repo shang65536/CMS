@@ -19,23 +19,22 @@ var pageViewModel = function(data) {
 			});
 	}
 	getAllTypeList();
-	var getAllProductList = function(){
+	var getAllProductList = function() {
 		$.ajax({
-			url: '/api/product/ProductList',
-			type: 'GET'		
-		})
-		.done(function(msg) {			
-			ko.mapping.fromJS(msg, self.ProductList);
-		})
-		.fail(function() {
-			console.log("error");
-		})
-		.always(function() {
-			console.log("complete");
-		});
-		
+				url: '/api/product/ProductList',
+				type: 'GET'
+			})
+			.done(function(msg) {
+				ko.mapping.fromJS(msg, self.ProductList);
+			})
+			.fail(function() {
+				console.log("error");
+			})
+			.always(function() {
+				console.log("complete");
+			});
 
-	}
+	};
 	getAllProductList();
 	//基本信息
 	self.productInfo = ko.mapping.fromJS({
@@ -44,13 +43,13 @@ var pageViewModel = function(data) {
 			describe: "",
 			createTime: "",
 			updateTime: "",
-			images:"",			
+			images: "",
 		})
 		//保存基本信息
 	self.seaveProductInfo = function(event, data) {
 		//调用后台存放数据			
 		var request = ko.mapping.toJS(self.productInfo);
-		request.type = $('#selectTypeParent').find('option:selected').attr('value');		
+		request.type = $('#selectTypeParent').find('option:selected').attr('value');
 		$.ajax({
 				url: '/api/product/addParent',
 				type: 'post',

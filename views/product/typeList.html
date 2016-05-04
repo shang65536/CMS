@@ -10,7 +10,7 @@
   <title>CMS</title>
 </head>
 <body style="margin-top:80px; ">
-  <% include ../parts/_navigation.html %>  
+  <% include ../parts/_navigation.html %>
   <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  <!-- 测试Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -75,12 +75,11 @@
             <div class="form-group">
               <label for="parent" class="col-sm-2 control-label">父级节点</label>
               <div class="col-sm-6">
-                <select id="selectTypeParent" class="form-control"> 
+                <select id="selectTypeParent" class="form-control">
                   <option>顶级</option>
                   <!-- ko foreach:$root.tableList -->
-                  <option data-bind='text:name,attr:{"value":id}'></option>               
-                  <!-- /ko -->
-                </select>
+                  <option data-bind='text:name,attr:{"value":id}'></option>
+                  <!-- /ko --> </select>
               </div>
             </form>
           </div>

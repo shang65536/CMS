@@ -1,15 +1,20 @@
 var express = require('express');
 var http = require('http');
 var path = require('path');
+var async = require('async');
 var upload = require('jquery-file-upload-middleware');
 var ueditor = require('ueditor');
 var _ = require("underscore");
 var apiConfig = require('../Api/apiConfig');
 var db = require('../DB/index');
+var http = require('http');
+var server = http.createServer();
+server.setMaxListeners(0);
+
 
 module.exports = function(app) {
 	//分析api.并按照配置调用方法
-	app.all('/api/*', function(req, res, callback) {
+	app.all('/api/*', function(req, res) {
 		try {
 			var api = _.findWhere(apiConfig.api, {
 				path: req.url
@@ -29,7 +34,7 @@ module.exports = function(app) {
 		}
 	});
 	//处理富文本编辑器的图片上传  需要 npm install 【ueditor】
-	app.use("/ueditor/ue", ueditor(path.join(__dirname, '../public'), function(req, res, next) {		
+	app.use("/ueditor/ue", ueditor(path.join(__dirname, '../public'), function(req, res, next) {
 		// ueditor 客户发起上传图片请求		
 		if (req.query.action === 'uploadimage') {
 
@@ -39,7 +44,7 @@ module.exports = function(app) {
 			var img_url = '../public/images/ueditor';
 			//	修改源码添加返回参数。自定上传升成功返回给前端的uri地址
 			var return_url = '../images/ueditor';
-			res.ue_up(img_url,return_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
+			res.ue_up(img_url, return_url); //你只要输入要保存的地址 。保存操作交给ueditor来做
 		}
 		//  客户端发起图片列表请求
 		else if (req.query.action === 'listimage') {

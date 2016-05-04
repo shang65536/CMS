@@ -11,10 +11,50 @@
 </head>
 <body style="margin-top:80px; ">
   <% include ../parts/_navigation.html %>
-  <div class="container">
-    <div class="row row-offcanvas row-offcanvas-right">
-      connection
-    </div>
+  <div class="container" data-bind="with:DataModel">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <div class="col-sm-2 col-sm-offset-2">
+          <button type="button" data-bind='click:$root.EditButton' class="btn btn-success">编辑</button>
+          <button type="button" data-bind='click:$root.cancleEditButton,visible:$root.cancleButtonShow' class="btn btn-success">取消编辑</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cUser" class="col-sm-2 control-label">联系人</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" data-bind="value:firstPeople" id="cUser" placeholder="主要联系人"></div>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">联系电话</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="phone" data-bind="value:phone" placeholder="多组电话使用  |  分隔"></div>
+      </div>
+      <div class="form-group">
+        <label for="tel" class="col-sm-2 control-label">固话</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="tel" data-bind="value:tel" placeholder="多组固话使用  |  分隔"></div>
+      </div>
+      <div class="form-group">
+        <label for="Email" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="Email" data-bind="value:Email" placeholder="电子信箱"></div>
+      </div>
+      <div class="form-group">
+        <label for="QQ" class="col-sm-2 control-label">QQ</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="QQ" data-bind="value:QQ" placeholder="QQ"></div>
+      </div>
+      <div class="form-group">
+        <label for="address" class="col-sm-2 control-label">地址</label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="address" data-bind="value:address" placeholder="通信地址"></div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-7 text-center">
+          <button type="button" data-bind='click:$root.seaveButton' class="btn btn-success seaveButton">保存</button>
+        </div>
+      </div>
+    </form>
   </div>
   <% include ../parts/_foot.html %>
   <% include ../_script.html %>
