@@ -1,6 +1,6 @@
-var mysql = require('../DB/index');
+var mysql = require('../../DB/index');
 var moment = require("moment");
-var tools = require('../public/threeScript/Tool/Tools');
+var tools = require('../../public/threeScript/Tool/Tools');
 
 //添加企业的基本信息
 exports.Add = function(req, res, callback) {

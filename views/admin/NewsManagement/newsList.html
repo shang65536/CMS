@@ -15,14 +15,14 @@
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
         <div class="list-group">
-          <a href="/product/type" class="list-group-item active">产品分类管理</a>
-          <a href="/product/list" class="list-group-item">产品管理</a>
+          <a href="/NewsManagement/type" class="list-group-item">新闻分类管理</a>
+          <a href="/NewsManagement/list" class="list-group-item active">新闻管理</a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-9">
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <label>产品名称</label>
+            <label>关键字</label>
             <input type="text" class="form-control" placeholder="Search"></div>
           <button type="button" class="btn btn-default">查找</button>
         </form>
@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <!-- 测试Modal -->
+  <!-- Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -93,6 +93,6 @@
   </div>
   <% include ../parts/_foot.html %>
   <% include ../_script.html %>
-  <script type="text/javascript" src="../javascripts/product/typeList.js"></script>
+  <script type="text/javascript" src="../javascripts/admin/product/typeList.js"></script>
 </body>
 </html>

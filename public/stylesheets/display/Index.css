@@ -1,0 +1,136 @@
+﻿body {
+    font-size: 12px;
+}
+
+.logo {
+    height: 80px;
+    line-height: 80px;
+    vertical-align: middle;
+    border-top: solid 3px #1f56b1;
+}
+
+    .logo img {
+        vertical-align: middle;
+        height: 50px;
+        width: auto;
+        border: none;
+        margin: 0px;
+        padding: 0px;
+        margin-left: 50px;
+        margin-right: 10px;
+    }
+
+    .logo span {
+        vertical-align: middle;
+        font-size: 18px;
+        font-family: 'Microsoft YaHei';
+        font-weight: 700;
+    }
+
+.Navigation {
+    height: 30px;
+    line-height: 30px;
+    background-image: url('Images/bannerBG.png');
+}
+
+    .Navigation ul {
+        text-align: right;
+        margin: 0px;
+        padding: 0px;
+        margin-right: 60px;
+    }
+
+        .Navigation ul li {
+            list-style-type: none;
+            display: inline-block;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+            font-family: 'Microsoft YaHei';
+        }
+
+    .Navigation li label {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+.banner img {
+    width: 100%;
+    height: 210px;
+}
+
+.MainContent {
+    padding-top: 20px;
+    background-image: url('Images/ContentMainBg.png');
+}
+
+    .MainContent table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .MainContent table .left {
+            width: 230px;
+            border-collapse: collapse;
+        }
+
+    .MainContent .ProductDisplay {
+        background-color: #e4f3ff;
+    }
+
+    .MainContent .PTypeList {
+        padding: 5px;
+    }
+
+        .MainContent .PTypeList ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .MainContent .PTypeList li {
+            color: #012e66;
+            padding: 10px;
+            list-style-type: none;
+            border-bottom: #74b5eb 1px dashed;
+        }
+
+            .MainContent .PTypeList li:last-child {
+                border-bottom: none;
+            }
+
+    .MainContent .ContactUs {
+        background-color: #e4f3ff;
+    }
+
+        .MainContent .ContactUs ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .MainContent .ContactUs li {
+            color: #012e66;
+            padding: 10px;
+            list-style-type: none;
+            border-bottom: #74b5eb 1px dashed;
+        }
+
+            .MainContent .ContactUs li:last-child {
+                border-bottom: none;
+            }
+
+        .MainContent .ContactUs .ContactUsTiele {
+            height: 35px;
+            line-height: 35px;
+            font-size: 14px;
+            background-color: #015fa8;
+            color: #fff;
+            font-weight: 700;
+            padding-left: 30px;
+        }
+
+.foot {
+    height: 90px;
+    border-top: 2px solid #b0c6da;
+    background-color: #e4f3ff;
+    font-size: 14px;
+}

@@ -15,8 +15,8 @@
     <div class="row row-offcanvas row-offcanvas-right">
       <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
         <div class="list-group">
-          <a href="/NewsManagement/type" class="list-group-item active">新闻分类管理</a>
-          <a href="/NewsManagement/list" class="list-group-item">新闻管理</a>
+          <a href="/product/type" class="list-group-item active">产品分类管理</a>
+          <a href="/product/list" class="list-group-item">产品管理</a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-9">
@@ -30,17 +30,15 @@
         <table class="table table-hover" style="margin-top:60px; ">
           <thead>
             <tr>
-              <th>产品名称</th>
-              <th>产品分类</th>
+              <th>类型名称</th>
               <th>描述</th>
-              <th>添加时间</th>
+              <th>创建时间</th>
               <th>操作</th>
             </tr>
           </thead>
-          <tbody data-bind='foreach:$root.ProductList'>
+          <tbody data-bind='foreach:$root.tableList'>
             <tr>
-              <td data-bind='text:pName'></td>
-              <td data-bind='text:tName'></td>
+              <td data-bind='text:name'></td>
               <td data-bind='text:describe'></td>
               <td data-bind='text:createTime'></td>
               <td>
@@ -52,7 +50,7 @@
       </div>
     </div>
   </div>
-  <!-- Modal -->
+  <!-- 测试Modal -->
   <div class="modal fade" id="myModal" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -62,7 +60,7 @@
           </button>
           <h4 class="modal-title" id="myModalLabel">添加产品分类</h4>
         </div>
-        <div class="modal-body" data-bind='with:$root.productInfo'>
+        <div class="modal-body" data-bind='with:$root.TypeInfo'>
           <form class="form-horizontal">
             <div class="form-group">
               <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
@@ -70,23 +68,24 @@
                 <input type="text" data-bind="value:name" class="form-control" id="name" placeholder="名称"></div>
             </div>
             <div class="form-group">
-              <label for="parent" class="col-sm-2 control-label">类别</label>
-              <div class="col-sm-6">
-                <select id="selectTypeParent" class="form-control">                  
-                  <!-- ko foreach:$root.TypeList -->
-                  <option data-bind='text:name,attr:{"value":id}'></option>
-                  <!-- /ko --> </select>
-              </div>
-            </div>
-            <div class="form-group">
               <label for="describe"  class="col-sm-2 control-label">描述</label>
               <div class="col-sm-6">
                 <input type="text" data-bind="value:describe" class="form-control" id="describe" placeholder="描述"></div>
             </div>
-          </form>
+            <div class="form-group">
+              <label for="parent" class="col-sm-2 control-label">父级节点</label>
+              <div class="col-sm-6">
+                <select id="selectTypeParent" class="form-control">
+                  <option>顶级</option>
+                  <!-- ko foreach:$root.tableList -->
+                  <option data-bind='text:name,attr:{"value":id}'></option>
+                  <!-- /ko --> </select>
+              </div>
+            </form>
+          </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-            <button type="button" class="btn btn-primary" data-bind="click:$root.seaveProductInfo">保存</button>
+            <button type="button" class="btn btn-primary" data-bind="click:$root.seaveTypeInfo">保存</button>
           </div>
         </div>
       </div>
@@ -94,6 +93,6 @@
   </div>
   <% include ../parts/_foot.html %>
   <% include ../_script.html %>
-  <script type="text/javascript" src="../javascripts/product/productList.js"></script>
+  <script type="text/javascript" src="../javascripts/admin/product/typeList.js"></script>
 </body>
 </html>

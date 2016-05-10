@@ -18,8 +18,8 @@ module.exports = function(app) {
 		try {
 			var api = _.findWhere(apiConfig.api, {
 				path: req.url
-			});
-			var tempClass = require('../controllers/' + api.class);
+			});	
+			var tempClass = require('../controllers/admin/' + api.class);
 			if (tempClass) {
 				tempClass[api.function](req, res, function(err, msg) {
 					if (err) {

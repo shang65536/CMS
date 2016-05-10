@@ -1,6 +1,6 @@
-var mysql = require('../DB/index');
+var mysql = require('../../DB/index');
 var moment = require("moment");
-var tools = require('../public/threeScript/Tool/Tools');
+var tools = require('../../public/threeScript/Tool/Tools');
 
 //添加产品类别
 exports.addType = function(req, res, callback) {
