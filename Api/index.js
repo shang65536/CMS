@@ -18,8 +18,9 @@ module.exports = function(app) {
 		try {
 			var api = _.findWhere(apiConfig.api, {
 				path: req.url
-			});	
-			var tempClass = require('../controllers/admin/' + api.class);
+			});
+			//动态加载js类库
+			var tempClass = require('../controllers/' + api.basepath + '/' + api.class);
 			if (tempClass) {
 				tempClass[api.function](req, res, function(err, msg) {
 					if (err) {

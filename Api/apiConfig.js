@@ -2,6 +2,7 @@ module.exports = {
 	api: [{
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/imageUpload/upload",
 		class: "ImageUpload",
 		function: "upload",
@@ -9,6 +10,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/enterprise/add",
 		class: "enterprise",
 		function: "add",
@@ -16,6 +18,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/product/addType",
 		class: "product",
 		function: "addType",
@@ -23,6 +26,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/product/getTypeList",
 		class: "product",
 		function: "getTypeList",
@@ -30,6 +34,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/product/addParent",
 		class: "product",
 		function: "addParent",
@@ -37,6 +42,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/product/ProductList",
 		class: "product",
 		function: "ProductList",
@@ -44,6 +50,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/connection/Add",
 		class: "connection",
 		function: "Add",
@@ -51,6 +58,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/connection/Edit",
 		class: "connection",
 		function: "Edit",
@@ -58,6 +66,7 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/connection/getInfoMation",
 		class: "connection",
 		function: "getInfoMation",
@@ -65,9 +74,18 @@ module.exports = {
 	}, {
 		id: "",
 		name: "",
+		basepath: "admin",
 		path: "/api/apiSupervise/addWorkQueue",
 		class: "apiSupervise",
 		function: "addWorkQueue",
 		describe: "Http链接管理"
+	}, {
+		id: "",
+		name: "",
+		basepath: "display",
+		path: "/api/homePage/Q_GetInfomation",
+		class: "homePage",
+		function: "Q_GetInfomation",
+		describe: "前端获取首页信息"
 	}]
 }
